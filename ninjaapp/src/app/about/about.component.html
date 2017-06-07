@@ -1,3 +1,9 @@
 <p>
-  about works!
+  The hero's birthday is {{ birthday | date:format | uppercase }}
 </p>
+<button (click)="toggleFormat()"> Toggle Format</button>
+
+<div>Normal power: <input [(ngModel)]="power"></div>
+<div>Boost factor: <input [(ngModel)]="factor"></div>
+
+<p>Super power boost: {{power | exponentialStrengthPipe: factor}}</p>

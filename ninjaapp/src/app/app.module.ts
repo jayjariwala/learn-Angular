@@ -7,12 +7,14 @@ import { routes } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { ExponentialStrengthPipePipe } from './exponential-strength-pipe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
+    ExponentialStrengthPipePipe,
       ],
   imports: [
     BrowserModule,
