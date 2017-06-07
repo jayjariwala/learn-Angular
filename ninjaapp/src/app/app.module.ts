@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ExponentialStrengthPipePipe } from './exponential-strength-pipe.pipe';
+import { NinjafilterPipe } from './ninjafilter.pipe';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ExponentialStrengthPipePipe } from './exponential-strength-pipe.pipe';
     HomeComponent,
     AboutComponent,
     ExponentialStrengthPipePipe,
+    NinjafilterPipe,
       ],
   imports: [
     BrowserModule,

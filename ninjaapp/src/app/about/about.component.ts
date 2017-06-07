@@ -12,7 +12,7 @@ export class AboutComponent implements OnInit {
   toggle = true; // start with true == shortDate
   get format()   { return this.toggle ? 'shortDate' : 'fullDate'; }
   toggleFormat() { this.toggle = !this.toggle; }
-
+  
   constructor() { }
 
   ngOnInit() {
