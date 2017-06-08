@@ -9,7 +9,6 @@ export class NinjafilterPipe implements PipeTransform {
     //check if it is underfined
     if(term === undefined)
     {
-      console.log("it is undefined")
       return ninjas;
     }
     return ninjas.filter( ninja => {
