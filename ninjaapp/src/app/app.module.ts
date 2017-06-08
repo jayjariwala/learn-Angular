@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ExponentialStrengthPipePipe } from './exponential-strength-pipe.pipe';
 import { NinjafilterPipe } from './ninjafilter.pipe';
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { NinjafilterPipe } from './ninjafilter.pipe';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

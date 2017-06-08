@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoggingService } from "../logging.service";
+import { DataService} from "../data.service";
 
 @Component({
   selector: 'app-home',
@@ -9,12 +10,8 @@ import { LoggingService } from "../logging.service";
 })
 export class HomeComponent implements OnInit {
 
-  ninjas = [
-    {name:"Yoshi", belt:"Black"},
-    {name:"Ryu", belt:"Red"},
-    {name:"krystal", belt:"Purple"}
-  ]
-  constructor(private logger:LoggingService) { }
+  ninjas = []
+  constructor(private logger:LoggingService, private dataService: DataService) { }
 
   logIt()
   {
@@ -22,6 +19,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.dataService.fetchData().subscribe(
+      (data) => this.ninjas = data
+    );
   }
 
 }
