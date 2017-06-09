@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoggingService } from "../logging.service";
 import { DataService} from "../data.service";
+declare var firebase:any;
 
 @Component({
   selector: 'app-home',
@@ -19,9 +20,14 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataService.fetchData().subscribe(
-      (data) => this.ninjas = data
-    );
+    this.fbGetData();
+  }
+
+  fbGetData()
+  {
+    firebase.database().ref('/').on('child_added', (snapshot) => {
+    this.ninjas.push(snapshot.val());
+    })
   }
 
 }
