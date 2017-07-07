@@ -1,28 +1,20 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head>
-	<title>Clock APP</title>
+	<title>Angular JS App</title>
 	<script src="angular.min.js"></script>
 </head>
 <body>
-<div class="container">
-	<p ng-controller="getTime">The Time is : {{ time }} 
-	<button ng-click = "updateTime()">Update Time</button>
-	</p>
-</div>
+	<p ng-controller = "getTime"> The time right now is {{ setDate }}</p>
+	<button>Update Date</button>
+	<script type="text/javascript">
+		var module =angular.module("myApp",[]);
+		module.controller("getTime",gettime);
 
-<script type="text/javascript">
-	var module = angular.module("myApp",[]);
-	module.controller("getTime",getTime);
-	function getTime ($scope) {
-		var date=new Date();
-		$scope.time = date.toTimeString();
-		$scope.updateTime =  function(){
-			var date=new Date();
-			$scope.time = date.toTimeString();
+		function gettime ($scope) {
+			var date = new Date();
+			$scope.setDate = date.toDateString();
 		}
-	}
-
-</script>
+	</script>
 </body>
 </html>
