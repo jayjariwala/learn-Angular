@@ -1,0 +1,7 @@
+
+<app-simple-form></app-simple-form>
+<ul>
+  <li *ngFor="let message of mail.messages">
+    <app-simple-form [message]="message"></app-simple-form>
+  </li>
+</ul>

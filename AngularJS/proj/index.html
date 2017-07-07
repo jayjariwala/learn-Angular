@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html data-ng-app="MyApp">
+<head>
+	<title>Angular app</title>
+	<script src="angular.min.js"></script>
+</head>
+
+<body data-ng-controller="simpleController">
+	<p>{{ user }}</p>
+	<ul>
+		<li data-ng-repeat="cust in customers">{{cust.name}}</li>
+	</ul>
+
+	<script>
+	angular.module("MyApp", [])
+	.controller("simpleController",function simpleController ($scope) 
+		{
+			$scope.user = "Jay";
+
+			$scope.customers = 
+			[{	name: 'Jay Jariwala', city:'clifton'},
+			{	name: 'Ryan Patel', city: 'jersey city'},
+			{	name:'gopal kotwal', city:'winsor'}];
+		});
+	</script>
+</body>
+
+</html>
