@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="showApp">
+<head>
+	<title>Show/hide directives</title>
+	<script src="angular.min.js"></script>
+	<script src="app.js"></script>
+	<script src="helloModule.js"></script>
+	<script src="http://mbenford.github.io/ngTagsInput/js/ng-tags-input.min.js"></script>
+	<link rel="stylesheet" href="http://mbenford.github.io/ngTagsInput/css/ng-tags-input.min.css" />
+</head>
+<body>
+	<div ng-controller="toggle as tog">
+	<input type="checkbox" ng-model="tog.switch" name="">
+	<p ng-hide="tog.switch">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+	<ul>
+		<li ng-repeat="obj in tog.objects">Element {{$index + 1}} {{ obj.firstname }} {{ obj.lastname }}</li>
+	</ul>
+
+	</div>
+	<div ng-controller="hello as hi">
+		<p>{{hi.sayhello}}</p>
+	</div>
+	<p ng-controller="MainCtrl as t">
+		<tags-input ng-model="t.tags"></tags-input>
+		<p>Model: {{t.tags}}</p>
+	</p>
+</body>
+</html>

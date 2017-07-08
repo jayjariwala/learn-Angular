@@ -6,15 +6,50 @@
 </head>
 <body>
 	<p ng-controller = "getTime"> The time right now is {{ setDate }}</p>
-	<button>Update Date</button>
+	
+
+	<div ng-controller="show" >
+	<button ng-click="show()">Update Date</button>
+	<input type="text" ng-model="name" name=""  ng-change="changeText()" placeholder="this is it">
+	<input type="text" ng-model="name" name=""  ng-change="changeText()" placeholder="this is it">
+	<input type="text" ng-model="name" name=""  ng-change="changeText()" placeholder="this is it">
+	<input type="text" ng-model="name" name=""  ng-change="changeText()" placeholder="this is it">
+	<input type="text" ng-model="name" name=""  ng-change="changeText()" placeholder="this is it">
+	<input type="text" ng-model="name" name=""  ng-change="changeText()" placeholder="this is it">
+	<p>{{ name }}</p>
+	<input type="checkbox" name="ch1" ng-model="ch1">
+	<p>{{ ch1 }}</p>
+	<input type="radio" name="radio" ng-model="radioval" value="op1"> option1 
+	<input type="radio" name="radio" ng-model="radioval" value ="op2"> option2
+	<input type="radio" name="radio" ng-model="radioval" value = "op3" > option3
+	<input type="date" ng-model="date" name="">
+
+	<p> {{ radioval }} </p>
+	<p> {{ date }}</p>
+	</div>
+	
+	
 	<script type="text/javascript">
 		var module =angular.module("myApp",[]);
 		module.controller("getTime",gettime);
-
+		module.controller("show",showText)
 		function gettime ($scope) {
 			var date = new Date();
 			$scope.setDate = date.toDateString();
 		}
+		function showText($scope)
+		{
+			$scope.show = function()
+			{
+				console.log("Hello world");
+			}
+			$scope.changeText =  function()
+			{
+				const colors = ['red','green','blue','orange','maganta','maroon','yellow','orange','pink'];
+				document.querySelector("body").style.backgroundColor = ""+colors[Math.floor((Math.random() * 10) + 1)];
+			}
+		}
+
 	</script>
 </body>
 </html>

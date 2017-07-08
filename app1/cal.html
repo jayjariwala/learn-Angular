@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>calculator</title>
+	<script src="angular.min.js"></script>
+	<style type="text/css">
+		button
+		{
+			margin-top:10px;
+			margin-left: 5px;
+		}
+		.symbol
+		{
+			display: inline-block;
+			margin:0px 5px;
+		}
+	</style>
+		
+	
+</head>
+<body>
+<h1>Calculator</h1>
+	<div ng-controller = "calculator as calc">
+		<input type="text" name="" ng-model = "calc.val1"><span class="symbol">{{ calc.symbol }}</span><input type="text" name="" ng-model="calc.val2"> <span>=</span> <span ng-bind="calc.ans"></span> <br/>
+			<button ng-click="calc.operation('+')">+</button><button ng-click="calc.operation('-')">-</button><button ng-click="calc.operation('*')">*</button><button ng-click="calc.operation('/')">/</button>
+			<button ng-click="calc.submit()">Submit</button>
+	</div>
+	<script type="text/javascript">
+		var module = angular.module("myApp",[]);
+		module.controller("calculator",calc);
+
+		function calc($scope)
+		{	
+			this.ans = 0;
+			this.operation = function(type)
+			{
+				this.symbol =  type;
+			}
+			this.submit = function()
+			{
+				var num1 = parseFloat(this.val1);
+				var num2 = parseFloat(this.val2);
+				switch (this.symbol) {
+					case '+':
+						this.ans = num1 + num2;
+						break;
+					case '-':
+						this.ans = num1 - num2;
+						break;
+					case '*':
+						this.ans = num1 * num2;
+						break;
+					case '/':
+						this.ans = num1 / num2;
+						break;
+				}
+			}
+
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Controller As</title>
+	<script src="angular.min.js"></script>
+	<div ng-controller="C1 as a1" >
+	<p ng-bind="a1.data" ></p>
+		<div ng-controller="C2 as a2">
+		<p ng-bind="a2.data"></p>
+		</div>
+	</div>
+	
+</head>
+<body>
+<script type="text/javascript">
+	var model = angular.module("myApp",[]);
+	model.controller("C1",function1);
+	model.controller("C2",function2);
+
+	function function1 () {
+		this.data = "I am C1"
+	}
+	function function2 (){
+		this.data = "I am C2"
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+<head>
+	<title>TodoApp</title>
+	<script src="angular.min.js"></script>
+	<script src="app.js"></script>
+</head>
+<body>
+<div class="todoapp" ng-controller="todocontroller as todo">
+	<input type="text" ng-model="todo.item" > <button ng-click="todo.addItem()" id="todoinput" >Add</button> <br/><br/>
+	<button ng-click="todo.editFields()">{{ todo.action }}</button>
+	<div class="list_container" >
+		<ul>
+			<li ng-repeat="item in todo.todoitems track by $index"><span ng-show="todo.edit"> {{ item }} </span> 
+			<span ng-hide="todo.edit"><input type="text" ng-model="item" ></span>
+			<button ng-show="todo.edit" ng-click="todo.deleteTodo($index)">Delete</button>
+			</li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>
