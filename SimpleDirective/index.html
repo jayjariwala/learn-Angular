@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Simple Directive</title>
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body ng-controller="mainCtrl" class="container" style="padding-top: 20px;">
+	<h1> Hello World </h1>
+	<user-info-card user="user1" my-directive ></user-info-card>	
+	<user-info-card user="user2" my-directive></user-info-card>	
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "simpledirective",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "jayjariwala <jay.jariwala@hotmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/jayjariwala/learn-Angular",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
